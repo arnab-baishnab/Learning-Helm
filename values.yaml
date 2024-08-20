@@ -1,0 +1,54 @@
+replicaCount: 2
+
+image:
+  repository: arnabbaishnab7620/book-server
+  tag: "02"
+
+service:
+  type: NodePort
+  port: 8080
+  targetPort: 8080
+  nodePort: 30001
+  
+
+livenessProbe:
+  httpGet:
+    path: /books/listOfAllBooks/
+    port: 8080
+  initialDelaySeconds: 120
+  timeoutSeconds: 10
+  periodSeconds: 20
+  failureThreshold: 5
+
+readinessProbe:
+  httpGet:
+    path: /books/listOfAllBooks/
+    port: 8080
+  initialDelaySeconds: 120
+  timeoutSeconds: 10
+  periodSeconds: 20
+  failureThreshold: 5
+
+serviceAccount:
+  create: true           # Set to false if you don't want to create a ServiceAccount
+  name: ""               # Optional: specify a name if you want to use an existing ServiceAccount
+  automount: true        # Optional: set to false if you want to disable automount
+  annotations: {}        # Optional: add any annotations you need
+
+ingress:
+  enabled: false        # Set to true if you want to use an Ingress
+  name: ""
+  nginx_class: ""
+  annotations: {}
+  pathType: ImplementationSpecific
+  hosts:
+    - host: chart-example.local
+      paths:
+        - /
+  tls: []
+
+autoscaling:
+  enabled: false          # Set to true if you want to enable autoscaling
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
