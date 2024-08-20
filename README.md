@@ -1,42 +1,27 @@
-Helm Chart for Book Server
-This repository contains a Helm chart for deploying a book server application on Kubernetes. Helm is a package manager for Kubernetes that helps you manage complex applications with ease.
+## Helm Chart for Book Server
 
-Features
-Templates: Simplifies the creation and management of Kubernetes manifests using Go templating.
-Configuration: Easily configurable via the values.yaml file, allowing you to customize settings like image tags, replica counts, and service types.
-Deployment: Supports standard Helm commands for installing, upgrading, and managing your application.
-Getting Started
-Install Helm: Follow the official Helm installation guide to set up Helm on your local machine.
+This Helm chart deploys a book server application on Kubernetes.
 
-Clone the Repository:
+### Quick Start
 
-sh
-Copy code
-git clone https://github.com/arnab-baishnab/Learning-Helm.git
-cd Learning-Helm/book-server-helm
-Install the Chart:
+1. **Install Helm:** Follow the [installation guide](https://helm.sh/docs/intro/install/).
+2. **Clone the Repo:**
+   ```sh
+   git clone https://github.com/arnab-baishnab/Learning-Helm.git
+   cd Learning-Helm/book-server-helm
+3. **Install the Chart**
+   helm install book-server-helm .
+4. **upgrade the chart**
+   helm upgrade book-server-helm .
+5. **Uninstall**
+   helm uninstall book-server-helm
 
-sh
-Copy code
-helm install book-server-helm .
-Upgrade the Chart:
-
-sh
-Copy code
-helm upgrade book-server-helm .
-Uninstall the Chart:
-
-sh
-Copy code
-helm uninstall book-server-helm
-Configuration
-Modify the values.yaml file to adjust configurations such as:
+**Configuration**
+**Adjust the values.yaml file to configure:**
 
 Image Repository and Tag
 Service Type and Ports
 Probes and Autoscaling
 Contributing
-Feel free to open issues or submit pull requests if you have suggestions or improvements.
+Open issues or submit pull requests for suggestions or improvements.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
