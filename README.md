@@ -12,16 +12,19 @@ This Helm chart deploys a book server application on Kubernetes.
 3. **Install the Chart**
    helm install book-server-helm .
 4. **upgrade the chart**
+   ```sh 
    helm upgrade book-server-helm .
-5. **Uninstall**
+6. **Uninstall**
+   ```sh
    helm uninstall book-server-helm
 
 **Configuration**
 **Adjust the values.yaml file to configure:**
 
-Image Repository and Tag
-Service Type and Ports
-Probes and Autoscaling
-Contributing
-Open issues or submit pull requests for suggestions or improvements.
+- Image Repository and Tag
+- Service Type and Ports
+- Probes and Autoscaling
+- Contributing
+
+**Open issues or submit pull requests for suggestions or improvements.**
 
